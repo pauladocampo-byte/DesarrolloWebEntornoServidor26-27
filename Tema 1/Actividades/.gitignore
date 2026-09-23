@@ -1,0 +1,54 @@
+# Archivos temporales y de configuración local de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+.vshistory/
+
+# Resultados de compilación de .NET
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+.artifacts/
+
+# Resultados de pruebas y análisis
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.binlog
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+*.trx
+
+# Paquetes NuGet generados
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# Configuración local de Visual Studio Code
+.vscode/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Archivos temporales y de respaldo
+*.tmp
+*.bak
+*.orig
+*~
+~$*
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
