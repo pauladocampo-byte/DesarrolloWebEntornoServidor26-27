@@ -1,0 +1,28 @@
+BOLETÍN UD 2 — BLOQUE I
+
+1. Comprobando el código
+La variable local n oculta (hace shadowing de) la variable de instancia n. Si se elimina la declaración local, n = 3 modifica el campo de la clase, que antes valía 8. El método no devuelve ni muestra ningún valor.
+
+2. Comprobando el código II
+En el fragmento del boletín, «Public» está escrito con mayúscula: C# distingue mayúsculas y minúsculas, por lo que debe escribirse «public». Además, si label es un control del formulario, debe inicializarse con InitializeComponent() antes de acceder a label.Text; el orden mostrado puede producir una referencia nula.
+
+3. Comprobando el código III
+Primero guarda en a el área que tenía label1 (ancho por alto). Después asigna al alto el valor del ancho, haciendo que el control quede cuadrado. La variable a conserva el área calculada antes de cambiar el alto.
+
+4. Comprobando el código IV
+El bucle calcula los cuadrados de los enteros desde 0 hasta 5, ambos incluidos, y los añade a textBox1 separados por espacios: 0 1 4 9 16 25.
+
+5. Comprobando el código V
+El operador || significa «o». El bucle continúa mientras al menos una de las variables sea mayor que cero. Tras diez iteraciones, n vale 0 y m vale -5; el cuadro muestra: «n = 0 m = -5».
+
+6. Reproductor MP3: posibles miembros
+Propiedades: CancionActual, Volumen y EstaReproduciendo (con getters y setters privados o controlados para conservar un estado válido). Métodos: Reproducir, Pausar, Detener, CambiarCancion, SubirVolumen y BajarVolumen. Son miembros de instancia porque describen y modifican el estado de un reproductor concreto. Solo tendría sentido un miembro estático para un dato o servicio compartido por todos los reproductores.
+
+11. ¿Método o propiedad? (Cuenta)
+AbonarEnCuenta y RetirarDeCuenta son métodos porque ejecutan operaciones y modifican el saldo. SaldoActual y Nombre son propiedades porque representan datos consultables del objeto. CalcularInterés es un método porque realiza un cálculo y devuelve un resultado.
+
+21. Visibilidad
+strClassString es un campo de la clase y puede leerse desde ambos controladores de eventos. strMetodoString es local a button1_Click y solo existe dentro de ese método; por eso button2_Click no puede acceder a ella. En el ejemplo del boletín, al declarar el campo sin modificador, su visibilidad predeterminada dentro de una clase es private. Un campo public sería accesible desde fuera de la clase, pero para datos de instancia normalmente es preferible encapsularlo como private y exponer una propiedad pública.
+
+22. Segunda variable strClassString
+Al declarar una variable local con el mismo nombre en button2_Click, esa variable local oculta al campo de clase dentro del método. No hay conflicto de compilación: el MessageBox de ese método usa la variable local «String Nuevo». El campo sigue existiendo y mantiene su valor para los demás métodos.
