@@ -1,0 +1,20 @@
+;P;¿Qué palabra clave permite crear una clase que no se puede instanciar directamente?
+abstract
+static
+sealed
+;R;1
+2
+
+;P;¿Qué tipo representa un valor verdadero o falso en C#?
+int
+bool
+string
+;R;2
+2
+
+;P;¿Qué método se ejecuta al crear un objeto?
+El constructor
+ToString
+Main
+;R;1
+3
