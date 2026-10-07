@@ -1,0 +1,15 @@
+@model Ejercicio2.Models.PaisesViewModel
+@{
+    ViewData["Title"] = "Países";
+}
+
+<main class="container py-5">
+    <h1 class="display-6 mb-4">Países</h1>
+    <p class="lead">Listado recuperado desde el modelo y renderizado con Razor:</p>
+    <ul class="list-group list-group-flush">
+        @foreach (var pais in Model.Paises)
+        {
+            <li class="list-group-item">@pais</li>
+        }
+    </ul>
+</main>

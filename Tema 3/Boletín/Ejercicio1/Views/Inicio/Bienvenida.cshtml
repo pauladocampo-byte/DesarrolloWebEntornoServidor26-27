@@ -1,0 +1,16 @@
+@model Ejercicio1.Models.BienvenidaViewModel
+@{
+    ViewData["Title"] = "Bienvenida";
+}
+
+<section class="py-5 text-center">
+    <div class="container">
+        <h1 class="display-5">@(Model.NombreDeUsuario is null
+            ? "¡Bienvenido, alumno!"
+            : $"¡Bienvenido, {Model.NombreDeUsuario}!")</h1>
+        <p class="lead mt-3">Ejercicio 1 · Parámetros de ruta y vistas MVC</p>
+        <div class="mt-4">
+            <code>/Inicio/Bienvenida/?NombreDeUsuario=Messi</code>
+        </div>
+    </div>
+</section>

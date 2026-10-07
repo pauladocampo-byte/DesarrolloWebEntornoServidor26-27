@@ -1,0 +1,44 @@
+@model IReadOnlyList<Ejercicio3.Models.Futbolista>
+@{
+    ViewData["Title"] = "Plantilla del Real Madrid";
+}
+
+<main class="container py-5">
+    <header class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <div>
+            <p class="text-uppercase text-primary fw-semibold mb-1">Temporada 2026/2027</p>
+            <h1 class="display-6 mb-0">Plantilla del Real Madrid</h1>
+        </div>
+        <div class="rounded-circle border border-3 border-warning d-flex align-items-center justify-content-center text-primary fw-bold"
+             style="width: 76px; height: 76px;" aria-label="Escudo representativo del Real Madrid">RM</div>
+    </header>
+
+    <p class="lead">Jugadores: <strong>@Model.Count</strong></p>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Posición</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.Count; i++)
+                {
+                    var futbolista = Model[i];
+                    <tr>
+                        <th scope="row">@(i + 1)</th>
+                        <td>@futbolista.Nombre</td>
+                        <td>@futbolista.Apellido</td>
+                        <td>@futbolista.Edad</td>
+                        <td>@futbolista.Posicion</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
