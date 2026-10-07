@@ -1,0 +1,42 @@
+﻿@* PASO 1: @model declara el tipo de dato que la vista espera recibir.
+   El controlador envía una List<ForumMessage> con return View("browse", msgs).
+   Así, Model representa exactamente esa lista, con comprobación de tipos. *@
+@model List<ForumMessage>
+
+@{
+    var forumName = (ViewData["ForumName"] as string) ?? "Foro";
+    // Preferir el título que haya puesto el controlador; si no existe, calcular uno legible
+    var title = (ViewData["Title"] as string)
+                ?? (forumName == "csharp" ? "C#" : forumName == "asp.net" ? "ASP.NET" : forumName);
+    ViewData["Title"] = title;
+}
+
+<h1>Mensajes del foro @title</h1>
+<p>La acción <code>ForumController.Browse</code> ha enviado @Model.Count mensaje(s).</p>
+
+@* PASO 2: foreach recorre la colección que llegó en Model, elemento a elemento.
+   En cada vuelta, message representa un único ForumMessage. *@
+@if (Model.Count == 0)
+{
+    <p>No hay mensajes para este foro.</p>
+}
+else
+{
+    foreach (var message in Model)
+    {
+        <article>
+                @* PASO 3: cada propiedad se lee desde el objeto actual. *@
+            <h2>@message.Subject</h2>
+            <p>@message.Body</p>
+            <p>Publicado por <strong>@message.Author</strong></p>
+            <time datetime="@message.PostedAt.ToString("yyyy-MM-ddTHH:mm:ss")">
+                    @message.PostedAt.ToString("dd/MM/yyyy HH:mm")
+                </time>
+        </article>
+    }
+}
+
+@* PASO 4: Razor codifica automáticamente los valores escritos con @ en HTML.
+   Por ejemplo, si el asunto contiene <script>, se muestra como texto y no se ejecuta.
+   No usar Html.Raw con contenido externo; aquí nunca desactivamos el encoding. *@
+<p><a href="/">Volver al inicio</a></p>
