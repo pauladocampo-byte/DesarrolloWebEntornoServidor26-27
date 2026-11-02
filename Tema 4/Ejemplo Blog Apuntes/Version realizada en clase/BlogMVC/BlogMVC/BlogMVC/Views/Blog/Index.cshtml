@@ -1,0 +1,50 @@
+@model IEnumerable<BlogMVC.Models.Post>
+
+@{
+    ViewData["Title"] = "Últimas Publicaciones";
+}
+
+<h1>Últimas Publicaciones</h1>
+
+<p>
+    <a asp-action="Create">Crear Nueva Publicación</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Texto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPublicacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Texto)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.FechaPublicacion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PostId">Edit</a> |
+                <a asp-action="ViewPost" asp-route-codigo="@item.PostId">Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                <a asp-action="Archive" asp-route-id="@item.PostId">Delete</a>
+
+            </td>
+        </tr>
+}
+        <a href="/blog/archive/2025/3">Archivo de marzo de 2025</a>
+    </tbody>
+</table>
