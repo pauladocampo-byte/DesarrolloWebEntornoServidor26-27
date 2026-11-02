@@ -1,0 +1,58 @@
+:root {
+    color-scheme: light;
+    --ink: #172b4d;
+    --muted: #61728a;
+    --blue: #176b87;
+    --paper: #f4f8fa;
+    --line: #dce7ec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem max(5vw, calc((100vw - 1100px) / 2));
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand { color: var(--blue); font-size: 1.15rem; font-weight: 750; text-decoration: none; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.site-header nav a, .back-link { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover, .back-link:hover, .text-link:hover { color: var(--blue); }
+.container { width: min(1100px, 90vw); min-height: calc(100vh - 150px); margin: 0 auto; padding: 3rem 0 4rem; }
+.hero { margin: 0 0 2rem; }
+.hero h1 { margin: 0.2rem 0; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; }
+.hero > p:last-child { color: var(--muted); }
+.eyebrow { margin: 0; color: var(--blue); font-size: .8rem; font-weight: 750; letter-spacing: .14em; }
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.post-card, .empty-state, .article-detail { padding: 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 8px 24px rgb(23 43 77 / 5%); }
+.post-card h2 { margin: .3rem 0 .6rem; font-size: 1.35rem; line-height: 1.25; }
+.post-date { margin: 0; color: var(--muted); font-size: .9rem; }
+.excerpt { color: #354a62; }
+.text-link { display: inline-flex; gap: .4rem; color: var(--blue); font-weight: 700; text-decoration: none; }
+.article-detail { max-width: 780px; margin: 1rem auto; padding: clamp(1.5rem, 5vw, 3rem); }
+.article-detail h1 { margin: .4rem 0 1.5rem; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+.article-copy { margin-top: 1.5rem; white-space: pre-line; font-size: 1.1rem; }
+.back-link { display: inline-block; margin-bottom: 2rem; }
+.empty-state { color: var(--muted); }
+.site-footer { padding: 1.2rem 5vw; border-top: 1px solid var(--line); background: #fff; color: var(--muted); text-align: center; font-size: .9rem; }
+
+@media (max-width: 640px) {
+    .site-header { align-items: flex-start; flex-direction: column; }
+    .site-header nav { flex-direction: column; gap: .4rem; }
+    .container { padding-top: 2rem; }
+}

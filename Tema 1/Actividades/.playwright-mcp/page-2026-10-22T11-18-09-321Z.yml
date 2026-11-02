@@ -1,0 +1,44 @@
+- generic [ref=f11e1]:
+  - generic:
+    - link "Ir al contenido principal" [ref=f11e2] [cursor=pointer]
+    - navigation "Navegación de la barra de título" [ref=f11e3]:
+      - generic [ref=f11e4]:
+        - generic [ref=f11e9]:
+          - button "Menú principal" [ref=f11e10] [cursor=pointer]
+          - tooltip [aria-hidden] [ref=f11e16]: Menú principal
+        - generic [ref=f11e23]:
+          - button "Aplicaciones de Google" [ref=f11e27] [cursor=pointer]
+          - 'button "Cuenta de Google: Paula Docampo (pauladocampo@fpfomento.com)" [ref=f11e33] [cursor=pointer]'
+    - navigation "Navegación principal" [ref=f11e40]:
+      - menu [ref=f11e42]:
+        - generic [ref=f11e43]:
+          - menuitem "Inicio" [ref=f11e44] [cursor=pointer]
+          - menuitem "Calendar" [ref=f11e50] [cursor=pointer]
+          - menuitem "Recursos" [ref=f11e56] [cursor=pointer]
+          - menuitem "Gemini" [ref=f11e63] [cursor=pointer]
+          - separator [ref=f11e69]
+          - menuitem "Clases impartidas" [expanded] [ref=f11e70] [cursor=pointer]
+          - group "Clases impartidas":
+            - menuitem "Para revisar":
+              - generic [ref=f11e77] [cursor=pointer]
+            - menuitem "GESTIÓN DAW-DAM-ASIR 26-27 ONLINE DAW-DAM-ASIR":
+              - generic [aria-hidden] [ref=f11e84] [cursor=pointer]: G
+            - menuitem "26-27 Administracion SGBD 2º ASIR":
+              - generic [aria-hidden] [ref=f11e87] [cursor=pointer]: "2"
+            - menuitem "26-27 Acceso a datos 2º DAM":
+              - generic [aria-hidden] [ref=f11e90] [cursor=pointer]: "2"
+            - menuitem "26-27 Desarrollo web en entorno servidor 2º DAW":
+              - generic [aria-hidden] [ref=f11e93] [cursor=pointer]: "2"
+          - separator [ref=f11e94]
+          - menuitem "Clases archivadas" [ref=f11e95] [cursor=pointer]
+          - menuitem "Ajustes" [ref=f11e101] [cursor=pointer]
+  - generic [ref=f11e113]:
+    - status "La página se está cargando..." [active]
+    - generic [ref=f11e119]:
+      - grid "Alumnos":
+        - rowgroup
+  - contentinfo [ref=f11e121]:
+    - generic [ref=f11e124]:
+      - button "Ayuda y comentarios" [ref=f11e125] [cursor=pointer]
+      - tooltip [aria-hidden] [ref=f11e131]: Ayuda y comentarios
+  - generic [ref=f11e132]: Compatibilidad con lectores de pantalla habilitada.
