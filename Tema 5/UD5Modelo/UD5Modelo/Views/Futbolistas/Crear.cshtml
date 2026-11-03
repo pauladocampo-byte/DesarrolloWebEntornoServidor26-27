@@ -1,0 +1,89 @@
+﻿@model UD5Modelo.Models.Futbolista
+
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear</h1>
+
+<h4>Futbolista</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Crear">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dni" class="control-label"></label>
+                <input asp-for="Dni" class="form-control" />
+                <span asp-validation-for="Dni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dorsal" class="control-label"></label>
+                <input asp-for="Dorsal" class="form-control" />
+                <span asp-validation-for="Dorsal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinutosJugados" class="control-label"></label>
+                <input asp-for="MinutosJugados" class="form-control" />
+                <span asp-validation-for="MinutosJugados" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EnActivo" /> @Html.DisplayNameFor(model => model.EnActivo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioMercado" class="control-label"></label>
+                <input asp-for="PrecioMercado" class="form-control" type="number" step="0.01" inputmode="decimal"/>
+                <span asp-validation-for="PrecioMercado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EquipoId" class="control-label"></label>
+                <input asp-for="EquipoId" class="form-control" />
+                <span asp-validation-for="EquipoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Minutos" class="control-label"></label>
+                <input asp-for="Minutos" class="form-control" />
+                <span asp-validation-for="Minutos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
