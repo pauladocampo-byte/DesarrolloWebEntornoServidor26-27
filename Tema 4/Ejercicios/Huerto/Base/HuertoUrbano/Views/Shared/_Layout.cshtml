@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Huerto urbano</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <header><nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom mb-3"><div class="container"><a class="navbar-brand" asp-controller="Home" asp-action="Index">Huerto urbano</a></div></nav></header>
+    <main class="container">@RenderBody()</main>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
