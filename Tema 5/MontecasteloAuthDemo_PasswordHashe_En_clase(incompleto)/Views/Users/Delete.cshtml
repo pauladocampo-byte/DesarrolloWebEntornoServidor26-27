@@ -1,0 +1,12 @@
+@model MontecasteloAuthDemo.Models.Usuario
+@{
+    ViewData["Title"] = "Borrar usuario";
+}
+<h1>Borrar usuario</h1>
+<div class="alert alert-warning">¿Seguro que quieres borrar el usuario <strong>@Model.NombreUsuario</strong>?</div>
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button class="btn btn-danger">Borrar</button>
+    <a class="btn btn-link" asp-action="Index">Cancelar</a>
+</form>

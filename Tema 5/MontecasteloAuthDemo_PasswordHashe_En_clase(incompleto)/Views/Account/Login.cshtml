@@ -1,0 +1,26 @@
+@model MontecasteloAuthDemo.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Iniciar sesión";
+    var returnUrl = (string?)ViewData["ReturnUrl"];
+}
+<h1>Iniciar sesión</h1>
+
+<form asp-action="Login" method="post" class="mt-3" style="max-width:420px">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+    <div class="mb-3">
+        <label asp-for="UserName" class="form-label"></label>
+        <input asp-for="UserName" class="form-control" autocomplete="username"/>
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" class="form-control" autocomplete="current-password"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,23 @@
+@model MontecasteloAuthDemo.Models.Usuario
+@{
+    ViewData["Title"] = "Editar usuario";
+}
+<h1>Editar usuario</h1>
+
+<form asp-action="Edit" method="post" style="max-width:520px">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="NombreUsuario" class="form-label"></label>
+        <input asp-for="NombreUsuario" class="form-control" />
+        <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+    <label asp-for="Rol" class="form-label"></label>
+    <select asp-for="Rol" asp-items="ViewBag.Roles" class="form-select"></select>
+    <span asp-validation-for="Rol" class="text-danger"></span>
+</div>
+    <button class="btn btn-primary">Guardar</button>
+    <a class="btn btn-link" asp-action="Index">Volver</a>
+</form>

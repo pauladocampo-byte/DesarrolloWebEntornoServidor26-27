@@ -1,0 +1,45 @@
+@model IEnumerable<MontecasteloAuthDemo.Models.Usuario>
+@{
+    ViewData["Title"] = "Usuarios";
+}
+<h1>Usuarios</h1>
+
+@if (TempData["Msg"] != null) {
+    <div class="alert alert-success">@TempData["Msg"]</div>
+}
+
+<form method="get" class="mb-3 d-flex">
+    <input class="form-control me-2" type="search" name="q" placeholder="Buscar usuario..." value="@Context.Request.Query["q"]">
+    <button class="btn btn-outline-primary" type="submit">Buscar</button>
+    <a class="btn btn-link ms-2" asp-action="Index">Limpiar</a>
+</form>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Nuevo usuario</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre de usuario</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.NombreUsuario</td>
+            <td>@u.Rol</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-primary" asp-action="Details" asp-route-id="@u.Id">Detalles</a>
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@u.Id">Editar</a>
+                <a class="btn btn-sm btn-secondary" asp-action="ResetPassword" asp-route-id="@u.Id">Reset pass</a>
+                <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@u.Id">Borrar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
