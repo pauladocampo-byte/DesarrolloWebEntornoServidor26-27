@@ -1,0 +1,26 @@
+@model CineClub.Models.Pelicula
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3">
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" class="form-control" />
+    <span asp-validation-for="Titulo" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Director"></label>
+    <input asp-for="Director" class="form-control" />
+    <span asp-validation-for="Director" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="AnioEstreno"></label>
+    <input asp-for="AnioEstreno" class="form-control" />
+    <span asp-validation-for="AnioEstreno" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="DuracionMinutos"></label>
+    <input asp-for="DuracionMinutos" class="form-control" />
+    <span asp-validation-for="DuracionMinutos" class="text-danger"></span>
+</div>
+<div class="form-check">
+    <input asp-for="Disponible" class="form-check-input" />
+    <label asp-for="Disponible"></label>
+</div>

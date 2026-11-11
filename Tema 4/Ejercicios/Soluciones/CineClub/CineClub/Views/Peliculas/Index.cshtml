@@ -1,0 +1,34 @@
+@model IEnumerable<CineClub.Models.Pelicula>
+<h1>Peliculas</h1>
+<p>
+    <a asp-action="Create">Añadir nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Director</th>
+            <th>AnioEstreno</th>
+            <th>DuracionMinutos</th>
+            <th>Disponible</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Titulo</td>
+                <td>@x.Director</td>
+                <td>@x.AnioEstreno</td>
+                <td>@x.DuracionMinutos</td>
+                <td>@x.Disponible</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@x.Id">Ver</a> |
+                    <a asp-action="Edit" asp-route-id="@x.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@x.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

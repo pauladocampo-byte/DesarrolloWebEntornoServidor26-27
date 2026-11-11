@@ -1,0 +1,15 @@
+@model CineClub.Models.Pelicula
+<h1>Detalle</h1>
+<dl>
+    <dt>Titulo</dt>
+    <dd>@Model.Titulo</dd>
+    <dt>Director</dt>
+    <dd>@Model.Director</dd>
+    <dt>AnioEstreno</dt>
+    <dd>@Model.AnioEstreno</dd>
+    <dt>DuracionMinutos</dt>
+    <dd>@Model.DuracionMinutos</dd>
+    <dt>Disponible</dt>
+    <dd>@Model.Disponible</dd>
+</dl>
+<a asp-action="Index">Volver</a>

@@ -1,0 +1,8 @@
+@model HuertoUrbano.Models.Cultivo
+<h1>Confirmar borrado</h1>
+<p>¿Eliminar <strong>@Model.Nombre</strong>?</p>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index">Cancelar</a>
+</form>
