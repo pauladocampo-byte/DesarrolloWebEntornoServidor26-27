@@ -1,0 +1,67 @@
+﻿@model Actividad4.Models.Registro
+
+@{
+    ViewData["Title"] = "Registrar usuario";
+}
+
+<h1 class="mt-4 mb-3">Registro de usuario</h1>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="RegistrarUsuario" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <h5 class="mb-3">Datos personales</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Nombre" class="form-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Apellido" class="form-label"></label>
+                            <input asp-for="Apellido" class="form-control" />
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <label asp-for="CorreoElectronico" class="form-label"></label>
+                            <input asp-for="CorreoElectronico" class="form-control" />
+                            <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4" />
+
+                    <h5 class="mb-3">Dirección</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <label asp-for="Direccion.Calle" class="form-label"></label>
+                            <input asp-for="Direccion.Calle" class="form-control" />
+                            <span asp-validation-for="Direccion.Calle" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Direccion.Ciudad" class="form-label"></label>
+                            <input asp-for="Direccion.Ciudad" class="form-control" />
+                            <span asp-validation-for="Direccion.Ciudad" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Direccion.CodigoPostal" class="form-label"></label>
+                            <input asp-for="Direccion.CodigoPostal" class="form-control" />
+                            <span asp-validation-for="Direccion.CodigoPostal" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Registrar usuario</button>
+                        <a asp-controller="Home" asp-action="Index"
+                           class="btn btn-outline-secondary ms-2">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

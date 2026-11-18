@@ -1,0 +1,82 @@
+﻿@model Actividad4.Models.Busqueda
+@using Actividad4.Models
+
+@{
+    ViewData["Title"] = "Buscar productos";
+    var resultados = ViewBag.Resultados as List<Producto>;
+}
+
+<h1 class="mt-4 mb-3">Buscar productos</h1>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="BuscarProductos" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Nombre" class="form-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Descripcion" class="form-label"></label>
+                            <input asp-for="Descripcion" class="form-control" />
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="PrecioMinimo" class="form-label"></label>
+                            <input asp-for="PrecioMinimo" class="form-control" />
+                            <span asp-validation-for="PrecioMinimo" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="PrecioMaximo" class="form-label"></label>
+                            <input asp-for="PrecioMaximo" class="form-control" />
+                            <span asp-validation-for="PrecioMaximo" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <a asp-controller="Home" asp-action="Index"
+                           class="btn btn-outline-secondary ms-2">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        @if (resultados != null)
+        {
+            <h2 class="mt-4">Resultados</h2>
+
+            @if (resultados.Count == 0)
+            {
+                <p class="text-muted">No se han encontrado productos con esos criterios.</p>
+            }
+            else
+            {
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th class="text-end">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in resultados)
+                        {
+                            <tr>
+                                <td>@p.Nombre</td>
+                                <td>@p.Descripcion</td>
+                                <td class="text-end">@p.Precio</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+    </div>
+</div>

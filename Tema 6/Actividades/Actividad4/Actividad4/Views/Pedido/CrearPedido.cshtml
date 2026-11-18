@@ -1,0 +1,75 @@
+﻿@model Actividad4.Models.Pedido
+
+@{
+    ViewData["Title"] = "Crear pedido";
+}
+
+<h1 class="mt-4 mb-3">Nuevo pedido</h1>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="CrearPedido" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <h5 class="mb-3">Datos del cliente</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="Cliente" class="form-label"></label>
+                            <input asp-for="Cliente" class="form-control" />
+                            <span asp-validation-for="Cliente" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Direccion" class="form-label"></label>
+                            <input asp-for="Direccion" class="form-control" />
+                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Ciudad" class="form-label"></label>
+                            <input asp-for="Ciudad" class="form-control" />
+                            <span asp-validation-for="Ciudad" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4" />
+
+                    <h5 class="mb-3">Productos del pedido</h5>
+
+                    @if (Model?.Productos != null && Model.Productos.Count > 0)
+                    {
+                        for (int i = 0; i < Model.Productos.Count; i++)
+                        {
+                            <div class="row g-3 align-items-end mb-2">
+                                <div class="col-md-7">
+                                    <label asp-for="Productos[i].Nombre" class="form-label">
+                                        Producto @(@i + 1)
+                                    </label>
+                                    <input asp-for="Productos[i].Nombre" class="form-control" />
+                                    <span asp-validation-for="Productos[i].Nombre" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-3">
+                                    <label asp-for="Productos[i].Precio" class="form-label"></label>
+                                    <input asp-for="Productos[i].Precio" class="form-control" />
+                                    <span asp-validation-for="Productos[i].Precio" class="text-danger"></span>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">
+                            No hay productos iniciales en el pedido. Inicializa la lista en el controlador.
+                        </p>
+                    }
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Crear pedido</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary ms-2">Volver al listado</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

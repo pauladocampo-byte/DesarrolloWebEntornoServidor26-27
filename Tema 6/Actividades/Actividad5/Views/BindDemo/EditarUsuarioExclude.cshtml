@@ -1,0 +1,41 @@
+@model Actividad5.Models.Usuario
+
+@{
+    ViewData["Title"] = "Editar usuario (Bind Exclude)";
+}
+
+<h1 class="mt-4 mb-3">Editar usuario (Exclude)</h1>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="EditarUsuarioExclude" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Apellido" class="form-label"></label>
+                        <input asp-for="Apellido" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CorreoElectronico" class="form-label"></label>
+                        <input asp-for="CorreoElectronico" class="form-control" />
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input asp-for="EsAdmin" class="form-check-input" />
+                        <label asp-for="EsAdmin" class="form-check-label"></label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Listar productos";
+}
+
+<h1 class="mt-4 mb-3">Listar productos</h1>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <form asp-action="ListarProductos" method="post">
+                    <div class="mb-3">
+                        <label for="nombreProducto" class="form-label">Nombre del producto</label>
+                        <input type="text" id="nombreProducto" name="nombreProducto" class="form-control" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Añadir a la variable de sesión
+                    </button>
+                </form>
+
+                <p class="mt-3">
+                    <a asp-action="MostrarProductos" class="btn btn-outline-secondary">
+                        Ir a "Mostrar productos"
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
